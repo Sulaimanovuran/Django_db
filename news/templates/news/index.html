@@ -1,0 +1,18 @@
+{% extends 'news/base.html' %}
+
+{% block content %}
+
+<ul class="list-articles">
+    {% for n in news %}
+        <li>
+            <h2>{{ n.title }}</h2>
+            <p>{{n.content|truncatewords:15}}</p>
+            <div class="clear"></div>
+            <p class="link-read-post"><a href="{{ n.get_absolute_url }}">Читать</a></p> 
+        </li>
+    {% endfor %}
+</ul>
+
+<!-- /news/news_id/ -->
+
+{% endblock content %}
